@@ -1,0 +1,32 @@
+@import '~styles/variables';
+
+.fields-wrap {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+  &.nth-fields-wrap {
+    width: calc(100% + 30px);
+  }
+
+  &__input {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid $color-grey-2;
+    padding: 20px 18px 6px;
+    width: 100%;
+  }
+
+  .fa {
+    &.remove-fields {
+      font-size: 26px;
+      padding-left: 10px;
+      color: $color-black-1;
+
+      &:hover {
+        color: $color-default;
+        cursor: pointer;
+      }
+    }
+  }
+}

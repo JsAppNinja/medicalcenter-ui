@@ -1,0 +1,69 @@
+@import '~styles/variables';
+
+.qa-item {
+  margin: 20px 0;
+  color: $color-grey;
+  font-size: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $color-grey-2;
+
+  &--expanded {
+    padding-bottom: 20px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding-bottom: 10px;
+
+    &--title {
+      cursor: pointer;
+
+      .qa-item__text {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__label {
+    min-width: 120px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__expander {
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  @media (max-width: $phone-width) {
+    font-size: 16px;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &__section {
+      flex-direction: column;
+    }
+
+    &__label {
+      padding-bottom: 8px;
+      font-weight: 500;
+    }
+
+    &__expander {
+      &.fa {
+        font-size: 30px;
+        padding-right: 20px;
+      }
+    }
+  }
+}

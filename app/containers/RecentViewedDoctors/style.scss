@@ -1,0 +1,74 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.recent-viewed-doctors {
+  padding: 30px 0;
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+    @media (max-width: $phone-width) {
+      font-size: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+    &-name {
+      color: $color-grey;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      @include ellipsize;
+    }
+
+    &-title {
+      color: $color-black-1;
+      font-size: 12px;
+      margin-bottom: 10px;
+      @include ellipsize;
+
+      @media (max-width: $phone-width) {
+        font-size: 14px;
+      }
+    }
+
+    &-photo {
+      width: 100%;
+      padding-top: 85%;
+      margin-bottom: 15px;
+    }
+
+    &-save {
+      position: absolute;
+      right: 0;
+      bottom: 15px;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-default;
+      }
+    }
+  }
+}
+
+.doctor-preview__content {
+  @media (max-width: $phone-width) {
+    &-price {
+      font-size: 16px;
+    }
+
+    &-rating {
+    }
+
+    &-exp {
+      font-size: 14px;
+    }
+  }
+}

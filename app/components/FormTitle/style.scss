@@ -1,0 +1,11 @@
+@import '~styles/variables';
+
+.form-topbar {
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,19 @@
+@import '~styles/variables';
+$primary-color: $color-default;
+@import 'loaders.css/src/animations/ball-pulse.scss';
+
+.feed-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+}

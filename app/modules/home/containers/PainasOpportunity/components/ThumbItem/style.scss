@@ -1,0 +1,15 @@
+@import '~styles/variables';
+
+.thumbnail {
+  &-image {
+    background-size: cover;
+    height: 200px;
+    transition: all 0.5s;
+    transform: scale(1);
+
+    &:hover {
+      transition: all 0.5s;
+      transform: scale(1.2);
+    }
+  }
+}

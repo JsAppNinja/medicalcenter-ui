@@ -1,0 +1,16 @@
+@import '~styles/variables';
+
+.sortable-container {
+  &__element {
+    position: relative;
+
+    &-icon {
+      display: block;
+      width: 5px;
+      height: 20px;
+      opacity: .25;
+      cursor: grab;
+      background: linear-gradient(180deg,#000,#000 20%,#fff 0,#fff 40%,#000 0,#000 60%,#fff 0,#fff 80%,#000 0,#000);
+    }
+  }
+}

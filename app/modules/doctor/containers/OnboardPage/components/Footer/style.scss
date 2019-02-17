@@ -1,0 +1,12 @@
+@import '~styles/variables';
+
+.footer {
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    width: 175px;
+  }
+}

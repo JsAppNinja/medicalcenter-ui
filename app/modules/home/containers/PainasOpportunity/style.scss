@@ -1,0 +1,45 @@
+@import '~styles/variables';
+
+.block {
+  &.team-block {
+    @media (max-width: $tablet-width) {
+      padding: 0;
+    }
+
+    .team-block__section {
+      padding-top: 0;
+      padding-bottom: 20px;
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $tablet-width) {
+          flex-direction: column;
+
+          .img-block {
+            width: 100%;
+          }
+
+          ul {
+            padding-left: 0;
+          }
+        }
+
+        @media (max-width: 500px) {
+          .gallery-list {
+            li {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-text {
+  &:hover {
+    color: $color-gray;
+  }
+}

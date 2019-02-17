@@ -1,0 +1,72 @@
+@import '~styles/variables';
+
+.video-list {
+  padding: 20px 0;
+
+  &__item {
+    color: $color-grey;
+    margin-bottom: 20px;
+
+    &-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    &-share {
+      float: right;
+      cursor: pointer;
+    }
+
+    &-description {
+      right: 0;
+      left: initial;
+    }
+
+    &-thumb {
+      border-radius: 5px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 0;
+      padding-top: 75%;
+      cursor: pointer;
+      position: relative;
+
+      &:hover .video-list__item-play {
+        transition: all 200ms ease-in;
+        background-color: rgba(115, 133, 159, 0.5);
+      }
+    }
+
+    &-back {
+      cursor: pointer;
+    }
+
+    &-play {
+      border-radius: 9px;
+      color: $color-white;
+      background-color: rgba(43, 51, 63, 0.7);
+      border: 2px solid $color-white;
+      font-size: 20px;
+      width: 90px;
+      height: 45px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -45px;
+      margin-top: -22.5px;
+
+      &:hover {
+        transition: all 200ms ease-in;
+        background-color: rgba(115, 133, 159, 0.5);
+      }
+    }
+  }
+}

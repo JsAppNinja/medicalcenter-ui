@@ -1,0 +1,21 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.checkout-success {
+  &__header {
+    @include flexRow;
+    font-size: 22px;
+    font-weight: bold;
+    color: $color-green;
+
+    &-icon {
+      font-size: 50px;
+      margin-right: 20px;
+    }
+  }
+
+  &__buttons {
+    @include flexRow;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,24 @@
+@import '~styles/variables';
+
+.avatar-modal {
+  &__dropzone {
+    margin-top: 20px;
+    width: 100%;
+    height: 250px;
+    background: $color-grey-2;
+  }
+
+  &__editor {
+    display: flex;
+    margin: auto;
+  }
+
+  &__label {
+    text-align: left;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

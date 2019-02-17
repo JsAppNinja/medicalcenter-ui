@@ -1,0 +1,48 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.claim-features {
+  max-width: 767px;
+  margin: 40px auto 20px;
+  display: flex;
+  flex-direction: column;
+
+
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid $color-grey-2;
+  }
+
+  &__content {
+    padding: 40px 20px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    @include flexRow;
+    margin-bottom: 30px;
+
+    &-icon {
+      color: $color-green;
+      font-size: 30px;
+      margin-right: 40px;
+    }
+
+    &-text {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}

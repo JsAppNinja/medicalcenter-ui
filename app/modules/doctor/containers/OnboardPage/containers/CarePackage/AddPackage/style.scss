@@ -1,0 +1,25 @@
+@import '~styles/variables';
+
+.add-package {
+  &__form {
+    max-width: 890px;
+    margin: 40px 0;
+
+    &-labels {
+      font-size: 16px;
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+
+    &-message {
+      padding: 15px 0 30px;
+      font-size: 14px;
+      color: $color-black-1;
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

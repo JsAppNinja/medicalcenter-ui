@@ -1,0 +1,22 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.claim-footer {
+  @include flexCol;
+  width: 100%;
+  text-align: center;
+  color: $color-white;
+  padding: 90px 0 60px;
+  background: linear-gradient(to bottom right, rgba($color-default, .95), rgba($color-yellow, .95)),
+    url('~images/composition.jpg') center center;
+  font-weight: 500;
+
+  &__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+  }
+}

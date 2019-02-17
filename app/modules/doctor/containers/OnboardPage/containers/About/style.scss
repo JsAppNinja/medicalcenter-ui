@@ -1,0 +1,66 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.onboard-container {
+  &__form {
+    max-width: 800px;
+    margin: 40px 0;
+
+    &-education {
+      margin-top: 20px;
+    }
+
+    &-preLabelSelect {
+      display: flex;
+      align-items: baseline;
+    }
+
+    &-preLabel {
+      padding-right: 15px;
+    }
+
+    &-dateselect {
+      width: 100%;
+    }
+
+    &-hospital {
+      // padding-top: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+
+  &__experience {
+    display: flex;
+    align-items: center;
+
+    &-input {
+      width: 80%;
+    }
+
+    &-label {
+      width: 20%;
+      padding: 10px;
+    }
+
+    &-feedback {
+      margin-right: 55px;
+    }
+  }
+
+  &__specialty {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &__buttons {
+    @include flexRow;
+    justify-content: space-between;
+  }
+
+  &__button {
+    width: 175px;
+  }
+}

@@ -1,0 +1,13 @@
+@import '~styles/variables';
+
+.star-rating {
+  font-size: 14px;
+
+  i {
+    padding: 1px;
+  }
+
+  &__star {
+    color: $color-default !important;
+  }
+}

@@ -1,0 +1,13 @@
+@import '~styles/variables';
+
+.list-view {
+  .article {
+    .ico-list {
+      &.ico-listview {
+        padding: 0;
+        border-right: 0;
+        padding-bottom: 8px;
+      }
+    }
+  }
+}

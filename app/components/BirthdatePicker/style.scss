@@ -1,0 +1,19 @@
+@import '~styles/variables';
+
+.birthdate-picker {
+  display: flex;
+  flex-direction: row;
+
+  &__day {
+    flex-basis: 30%;
+    margin: 0 10px;
+  }
+
+  &__month {
+    flex-basis: 40%;
+  }
+
+  &__year {
+    flex-basis: 40%;
+  }
+}

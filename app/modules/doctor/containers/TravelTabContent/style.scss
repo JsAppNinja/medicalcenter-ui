@@ -1,0 +1,15 @@
+@import '~styles/variables';
+
+.profile-tabs__travel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .svg-icon {
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

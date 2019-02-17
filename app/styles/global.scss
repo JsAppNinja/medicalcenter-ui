@@ -1,0 +1,68 @@
+// Font awesome
+$fa-font-path: "~font-awesome-sass/assets/fonts/font-awesome/";
+@import "~font-awesome-sass/assets/stylesheets/font-awesome";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Image gallery
+@import "~react-image-gallery/styles/scss/image-gallery";
+
+@import "elegant-icons";
+
+// custom theme
+@import "theme/style";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+#app, .app {
+  height: 100%;
+}
+
+ul {
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+small {
+  color: #888;
+}
+
+.close-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  outline: none;
+  font-family: 'ElegantIcons';
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-size: 20px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+
+  span {
+    vertical-align: super;
+  }
+}
+
+.modal .modal-dialog.confirm-modal {
+  .modal-content {
+    padding: 40px 40px 20px;
+  }
+
+  .modal-footer {
+    border-top: none;
+  }
+}

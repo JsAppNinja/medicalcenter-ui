@@ -1,0 +1,64 @@
+@import '~styles/variables';
+
+.save-doctor-modal {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    // background: linear-gradient(
+    //   rgba($color-white,0.001) 0%,
+    //   rgba($color-white,0.001) 60%,
+    //   $color-white 100%
+    // );
+    pointer-events: none;
+  }
+
+  &__preview {
+    box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 20px -40px -20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    position: relative;
+
+    .doctor-preview {
+      box-shadow: none;
+      border-bottom: 2px solid $color-grey-2;
+    }
+
+    .doctor-preview:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__text {
+    padding: 60px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__item {
+    position: relative;
+
+    &-save {
+      color: $color-default;
+      position: absolute;
+      right: 70px;
+      top: 22px;
+      cursor: pointer;
+
+      @media (max-width: $phone-width) {
+        right: 30px;
+      }
+    }
+  }
+
+  &.modal-dialog {
+    width: 500px;
+  }
+}

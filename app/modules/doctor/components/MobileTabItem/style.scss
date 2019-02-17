@@ -1,0 +1,22 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.profile-tabsview__mobile-item {
+  @include flexRow;
+  justify-content: space-between;
+  padding: 11px 15px;
+  font-size: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  font-weight: bold;
+  margin-top: 10px;
+  box-shadow: 1px 1.5px 0 rgba(0, 0, 0, 0.1);
+
+  &__toggled {
+    color: $color-default;
+  }
+
+  .fa {
+    font-size: 36px;
+  }
+}

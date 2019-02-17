@@ -1,0 +1,30 @@
+@import '~styles/variables';
+
+.profile-tabs__about {
+  @media (max-width: $phone-width) {
+    padding-top: 20px;
+  }
+
+  &-addr {
+    display: flex;
+    flex-direction: row;
+
+    &__text {
+      flex: 1;
+    }
+
+    @media (max-width: $phone-width) {
+      flex-direction: column;
+
+      &__directions {
+        padding: 15px 0 10px;
+
+        .btn {
+          padding: 16px;
+          font-size: 18px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

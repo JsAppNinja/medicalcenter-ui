@@ -1,0 +1,66 @@
+@import "~styles/variables";
+@import "~styles/mixins";
+
+.article {
+  .packages-list {
+    &__thumbnail {
+      @include flexRow;
+
+      @media (max-width: 767px) {
+        @include flexCol;
+      }
+
+      &-description {
+        @include flexRow;
+      }
+
+      @media (max-width: 767px) {
+        @include flexCol;
+        &-description {
+          @include flexCol;
+          align-items: stretch;
+        }
+      }
+    }
+
+    &__heading{
+      &-title {
+        display: block;
+        width: 100%;
+        padding-bottom: 10px;
+        padding-right: 0;
+        font-weight: 500;
+      }
+
+      &.heading {
+        h3 {
+          padding-right: 0;
+          max-width: 100%;
+        }
+      }
+
+      &-numbers {
+        &.info-day {
+          border-left: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+
+    &-track {
+      background: $color-neutral;
+    }
+
+    &-thumb {
+      background: $color-black-1;
+
+      &:hover {
+        background: $color-gray;
+      }
+    }
+  }
+}

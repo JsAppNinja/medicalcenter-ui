@@ -1,0 +1,21 @@
+.custom-popover {
+  &.popover {
+    border-radius: 0;
+  }
+
+  .popover-content {
+    padding: 0;
+  }
+
+  .control-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 7px;
+
+    &:hover {
+      background-color: #e8e8e8;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

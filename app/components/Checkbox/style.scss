@@ -1,0 +1,48 @@
+@import '~styles/variables';
+$default-box-size: 25px;
+$checkmark-size: 15px;
+
+.kcheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+
+  &__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $default-box-size;
+    height: $default-box-size;
+    min-width: $default-box-size;
+
+    border: 2px solid $color-grey;
+    border-radius: 100%;
+
+    background-color: #fff;
+    margin-right: 20px;
+
+
+    &::after {
+      display: block;
+      content: '';
+
+      background-color: $color-grey;
+      border-radius: 100%;
+      width: $checkmark-size;
+      height: $checkmark-size;
+
+      opacity: 0;
+      overflow: hidden;
+    }
+  }
+
+  &--checked &__input {
+    &::after { opacity: 1; }
+  }
+
+  &__label {
+    font-family: $font-secondary;
+  }
+}

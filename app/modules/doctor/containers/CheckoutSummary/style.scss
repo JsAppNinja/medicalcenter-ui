@@ -1,0 +1,91 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.checkout-summary {
+  @include flexCol;
+  min-width: 350px;
+  max-width: 400px;
+
+  &__content {
+    @include lightShadow;
+    background-color: $color-grey-light;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  &__doctor {
+    @include flexRow;
+    align-items: flex-start;
+
+    .avatar {
+      margin-right: 20px;
+    }
+
+    &-info {
+      &__rating {
+        @include flexRow;
+        font-size: 10px;
+
+        .star-rating {
+          margin-right: 10px;
+        }
+      }
+
+      &__name {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+
+      &__exp {
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__price {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  &__item {
+    @include flexRow;
+    font-size: 14px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &-label {
+      font-weight: bold;
+      min-width: 150px;
+    }
+
+    &-value {
+      text-align: right;
+    }
+  }
+
+  &__footer {
+    @include flexRow;
+
+    &-secure {
+      font-size: 20px;
+      color: $color-green;
+      margin-right: 10px;
+    }
+
+    &-text {
+      font-size: 16px;
+      font-family: $font-secondary;
+      font-weight: 700;
+    }
+  }
+}

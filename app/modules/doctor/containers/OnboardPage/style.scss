@@ -1,0 +1,11 @@
+@import '~styles/variables';
+
+.onboard-page {
+  display: flex;
+  align-items: flex-start;
+
+  &__container {
+    margin: 40px;
+    flex: 1;
+  }
+}

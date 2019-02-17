@@ -1,0 +1,36 @@
+@import "~styles/variables";
+
+.doctor-feed-colitem {
+  margin: 15px 0;
+
+  .form-control {
+    border-radius: 0;
+    padding: 8px 12px;
+  }
+
+  .btn[type=submit] {
+    &.doctor-feed-colitem__button {
+      padding: 6px;
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+}
+
+.search-form {
+  &__keyword {
+    position: relative;
+
+    .form-control {
+      padding: 8px 12px 8px 30px;
+    }
+
+    &-icon {
+      left: 25px;
+      top: 10px;
+      z-index: 1;
+      position: absolute;
+      font-size: 16px;
+    }
+  }
+}

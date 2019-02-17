@@ -1,0 +1,55 @@
+@import '~styles/variables';
+
+.existing-package {
+  &__form {
+    max-width: 890px;
+    margin: 40px 0;
+  }
+
+  &__item {
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: $color-grey-light;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    min-height: 230px;
+
+    &-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: $color-gray;
+    }
+
+    &-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: $color-gray;
+    }
+
+    &-text{
+      font-size: 16px;
+      line-height: 1.5;
+      color: $color-black-1;
+    }
+
+    &-titlebar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    &-icons {
+      display: flex;
+      justify-content: flex-end;
+
+      .fa {
+        &.edit-icons {
+          padding: 10px;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

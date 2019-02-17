@@ -1,0 +1,18 @@
+@import '~styles/variables';
+
+.service-dragdrop {
+  &__context {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__message {
+    padding: 15px 0 30px;
+    font-size: 14px;
+    color: $color-black-1;
+  }
+
+  &__button {
+    width: 350px;
+  }
+}

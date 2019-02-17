@@ -1,0 +1,15 @@
+@import "~styles/variables";
+
+.content-sub {
+  .content-holder {
+    &.list-view {
+      &.doctorfeed-list-view-items {
+        margin: 0 2px;
+      }
+    }
+  }
+}
+
+.text-message {
+  padding: 50px 0;
+}

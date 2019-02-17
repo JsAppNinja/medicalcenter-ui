@@ -1,0 +1,7 @@
+@import '~styles/variables';
+
+.login-modal {
+  &.modal-dialog {
+    width: 500px;
+  }
+}

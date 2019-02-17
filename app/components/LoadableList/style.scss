@@ -1,0 +1,13 @@
+@import '~styles/variables';
+
+.loadable-list {
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $phone-width) {
+      padding: 15px 0;
+    }
+  }
+}

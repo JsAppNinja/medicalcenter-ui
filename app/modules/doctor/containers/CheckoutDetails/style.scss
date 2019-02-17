@@ -1,0 +1,28 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.checkout-details {
+  margin: 40px 0;
+
+  @media only screen and (min-width: 768px) {
+    @include flexRow;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &__form {
+      max-width: 585px;
+      margin-right: 20px;
+    }
+  }
+
+  &__desc {
+    font-family: $font-secondary;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: $color-black-1;
+  }
+
+  &__card {
+    height: 20px;
+  }
+}

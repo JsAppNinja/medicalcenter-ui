@@ -1,0 +1,108 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.care-service-item {
+  @include flexCol;
+  background-color: $color-grey-light;
+  border: 1px solid $color-grey-2;
+  width: 100%;
+  font-size: 14px;
+  color: $color-grey;
+  margin-bottom: 20px;
+
+  &__header {
+    border-bottom: 1px solid $color-grey-2;
+    display: flex;
+
+    &-price {
+      padding: 10px 20px;
+      color: $color-white;
+      background-color: $color-grey;
+    }
+  }
+
+  &__body {
+    @include flexRow;
+    padding: 10px 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-grey-2;
+
+    &-left {
+      @include flexRow;
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    &-title {
+      font-weight: 700;
+      flex-basis: 25%;
+      margin-right: 10px;
+    }
+
+    &-content {
+      margin-right: 10px;
+    }
+  }
+
+  &__footer {
+    @include flexCol;
+    padding: 0 20px;
+
+    &-expander {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-weight: 700;
+      padding: 12px;
+
+      i {
+        font-size: 16px;
+        margin-left: 5px;
+      }
+    }
+
+    &-text {
+      padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: $phone-width) {
+    margin-bottom: 0;
+    margin-top: 20px;
+
+    &__body {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 10px 0 0 0;
+
+      &-left {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      &-title {
+        font-size: 18px;
+        margin-right: 0;
+        padding: 0 20px;
+      }
+
+      &-content {
+        padding: 10px 20px 15px 20px;
+        font-size: 16px;
+        margin-right: 0;
+      }
+
+      .btn {
+        padding: 17px 0;
+        font-size: 18px;
+      }
+    }
+
+    &__footer {
+      &-expander {
+        font-size: 18px;
+      }
+    }
+  }
+}

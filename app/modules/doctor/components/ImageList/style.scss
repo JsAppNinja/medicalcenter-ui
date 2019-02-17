@@ -1,0 +1,47 @@
+@import '~styles/variables';
+
+.image-list {
+  &__item {
+    color: $color-grey;
+    margin-bottom: 20px;
+
+    &-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: $phone-width) {
+      margin: 20px 0;
+
+      &-title {
+        padding: 10px 0;
+      }
+    }
+
+    &-img {
+      border-radius: 5px;
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 0;
+      padding-top: 75%;
+      cursor: zoom-in;
+    }
+  }
+}
+
+.photo-viewer.modal-dialog {
+  width: 80%;
+  max-width: 1000px;
+
+  @media (max-width: 767px) {
+    width: 90%!important;
+  }
+
+  .modal-content {
+    display: block;
+  }
+}

@@ -1,0 +1,10 @@
+@import '~styles/variables';
+
+.contact {
+  margin: 20px 0;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}

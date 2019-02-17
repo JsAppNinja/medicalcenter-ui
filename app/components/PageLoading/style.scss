@@ -1,0 +1,27 @@
+@import '~styles/variables';
+$primary-color: #fff;
+@import 'loaders.css/src/animations/pacman.scss';
+
+.page-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 100px 0;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100000;
+  background-color: rgba($color-default, .9);
+}
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+}

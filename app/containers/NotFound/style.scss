@@ -1,0 +1,107 @@
+@import '~styles/variables';
+
+.notfound {
+  background: $color-default;
+  width: 100%;
+  height: 100%;
+
+  &-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 35px;
+
+      &-four {
+        color: $color-white;
+        font-size: 300px;
+        font-weight: bold;
+      }
+
+      &-src {
+        width: 30%;
+        height: 100%;
+      }
+
+      @media (max-width: $tablet-width) {
+        &-src {
+          width: 40%;
+        }
+      }
+
+      @media (max-width: $phone-width) {
+        &-four {
+          font-size: 200px;
+        }
+        &-src {
+          width: 30%;
+        }
+      }
+
+      @media (max-width: 600px) {
+        &-src {
+          width: 40%;
+        }
+      }
+      @media (max-width: 500px) {
+        &-four {
+          font-size: 150px
+        }
+        &-src {
+          width: 40%;
+        }
+      }
+      @media (max-width: 400px) {
+        &-four {
+          font-size: 80px
+        }
+        &-src {
+          width: 30%;
+        }
+      }
+    }
+
+    &__textbutton {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom:60px;
+    }
+
+    &__text {
+      color: $color-white;
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      padding: 20px 20px 50px 20px;
+    }
+
+    &__buttons {
+      text-align: center;
+      width: 100%;
+      &-btn {
+        &.btn {
+          width: 150px;
+          margin: 15px;
+          height: 35px;
+          font-size: 14px;
+          font-weight: bold;
+
+          &:hover {
+            color: $color-default;
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+          }
+
+          @media (max-width: $phone-width) {
+            width: 90%;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+}

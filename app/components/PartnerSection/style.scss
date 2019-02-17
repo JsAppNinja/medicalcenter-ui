@@ -1,0 +1,22 @@
+@import '~styles/variables';
+
+.logos {
+  &.row {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 40px;
+
+    @media (max-width: $phone-width) {
+      flex-direction: column;
+
+      .logo {
+        height: 150px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

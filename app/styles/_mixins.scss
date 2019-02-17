@@ -1,0 +1,20 @@
+@mixin ellipsize {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin lightShadow {
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+}

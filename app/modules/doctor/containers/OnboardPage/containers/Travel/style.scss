@@ -1,0 +1,8 @@
+@import '~styles/variables';
+
+.travel-container {
+  &__form {
+    max-width: 800px;
+    margin: 40px 0;
+  }
+}

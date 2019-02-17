@@ -1,0 +1,11 @@
+@import '~styles/variables';
+
+.doctor-tags {
+  &.tags {
+    li {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 0 9px 9px 0;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '~styles/variables';
+
+.profile--advanced {
+  &__specialities {
+    @media (max-width: $phone-width) {
+      padding-top: 30px;
+    }
+  }
+
+  @media (max-width: $phone-width) {
+    &__videolist {
+      display: none;
+    }
+  }
+}

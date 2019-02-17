@@ -1,0 +1,16 @@
+export default [
+  'Neck',
+  'Spine',
+  'Back',
+  'Shoulder',
+  'Elbow',
+  'Wrist',
+  'Hand',
+  'Finger',
+  'Forearm',
+  'Hip',
+  'Leg',
+  'Knee',
+  'Ankle',
+  'Foot',
+];

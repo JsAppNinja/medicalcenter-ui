@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- The first thing in any HTML file should be the charset -->
+  <meta charset="utf-8">
+
+  <!-- Make the page mobile compatible -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Allow installing the app to the homescreen -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- iOS home screen icons -->
+  <meta name="apple-mobile-web-app-title" content="KangarooMD">
+  <meta name="description" content="KangarooMD is an intelligent healthcare consumer shopping engine. It empowers millions of patients to search, compare doctors and book appointments online based on prices, care quality, and convenience. Check transparent care prices, read patient reviews, and get questions answered about orthopedic surgery and treatment options for your joints such as back, knee, hip, and shoulder. See what other patients have to say about their care journey and results. Easily find a trusted top doctor for your care needs and book appointments instantly, and more – all at KangarooMD."
+  />
+  <meta name="keywords" content="orthopedic surgeons, orthopedic surgery, book appointments, healthcare consumer shopping engine"
+  />
+  <meta property="og:site_name" content="KangarooMD" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kangaroomd.com" />
+  <meta property="og:title" content="KangarooMD" />
+  <meta property="og:description" content="KangarooMD is an intelligent healthcare consumer shopping engine. It empowers millions of patients to search, compare doctors and book appointments online based on prices, care quality, and convenience. Check transparent care prices, read patient reviews, and get questions answered about orthopedic surgery and treatment options for your joints such as back, knee, hip, and shoulder. See what other patients have to say about their care journey and results. Easily find a trusted top doctor for your care needs and book appointments instantly, and more – all at KangarooMD."
+  />
+  <meta property="og:image" content="/logo-1200x630.png" />
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <link rel="icon" href="/favicon-64.png" />
+  <title>KangarooMD</title>
+</head>
+
+<body class="homepage">
+  <!-- Display a message if JS has been disabled on the browser. -->
+  <noscript>If you're seeing this message, that means
+    <strong>JavaScript has been disabled on your browser</strong>, please
+    <strong>enable JS</strong> to make this app work.</noscript>
+
+  <!-- The app hooks into this div -->
+  <div id="app"></div>
+  <!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out the webpack config files in internals/webpack for details) -->
+  <script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: 'e5847ed8-0e13-436a-a879-2fc20e6518b8', f: true }); done = true; } }; })();</script>
+</body>
+
+</html>

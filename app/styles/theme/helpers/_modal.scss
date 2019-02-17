@@ -1,0 +1,34 @@
+.modal .modal-dialog {
+  .modal-content {
+    border-radius: 5px;
+    padding: 20px 40px;
+    background-color: $color-grey-light;
+
+    .modal-title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .close {
+      top: 20px;
+      right: 15px;
+      outline: none;
+
+      font-family: 'ElegantIcons';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+
+      font-size: 22px;
+      box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+
+      span {
+        vertical-align: super;
+      }
+    }
+  }
+}

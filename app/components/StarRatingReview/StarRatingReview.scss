@@ -1,0 +1,11 @@
+.rating-passive {
+  .stars {
+    .react-rater {
+      .react-rater-star {
+        &.is-active {
+          color: #ff6f31;
+        }
+      }
+    }
+  }
+}

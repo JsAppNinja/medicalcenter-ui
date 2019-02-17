@@ -1,0 +1,57 @@
+@import '~styles/variables';
+
+.social-share-modal {
+  color: $color-grey;
+
+  &__embed {
+    padding: 20px 0;
+
+    &-desc {
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    padding: 20px 0;
+    border-bottom: 2px solid $color-grey-2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+      margin-right: 20px;
+
+      div {
+        line-height: 20px;
+      }
+      &.fa {
+        font-size: 20px;
+      }
+    }
+
+    &-link {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-default;
+
+      &--active, &:hover {
+        color: $color-default;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.modal-dialog {
+    @media (min-width: 768px) {
+      width: 700px;
+    }
+  }
+}

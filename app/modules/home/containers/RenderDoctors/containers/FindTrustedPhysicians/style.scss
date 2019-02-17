@@ -1,0 +1,40 @@
+@import '~styles/variables';
+
+.selectpicker.form-control {
+  padding: 8px;
+}
+
+.hero-section {
+  &.has-map {
+    .results-wrapper {
+      .search-form {
+        &.custome-bg-gray-form {
+          width: auto;
+          background-color: rgba(0, 0, 0, 0.03);
+          margin: 20px;
+          padding: 20px 20px 0 20px;
+
+          .btn[type=submit] {
+            &.margin-3percent {
+              &.pull-right {
+                border-radius: 0;
+                position: relative;
+                bottom: 5px;
+                width: 40px;
+                height: 35px;
+                &:after {
+                  border-radius: 0;
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-zipcode {
+  margin-bottom: 10px;
+}

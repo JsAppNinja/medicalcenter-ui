@@ -1,0 +1,10 @@
+@import '~styles/variables';
+
+.drag-handler {
+  position: absolute;
+  top: 20px;
+  left: 7px;
+  width: 80px;
+  z-index: 1;
+  cursor: grab;
+}

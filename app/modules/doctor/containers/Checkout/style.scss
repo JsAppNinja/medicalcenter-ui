@@ -1,0 +1,25 @@
+@import '~styles/variables';
+
+.checkout {
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: $color-black-1;
+  }
+
+  &__desc {
+    font-family: $font-secondary;
+    font-size: 14px;
+    margin: 20px 0;
+
+    a {
+      text-decoration: underline;
+      font-weight: 700;
+    }
+  }
+}

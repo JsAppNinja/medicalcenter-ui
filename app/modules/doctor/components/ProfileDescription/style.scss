@@ -1,0 +1,11 @@
+@import '~styles/variables';
+
+.profile-description {
+  color: $color-gray;
+  font-size: 14px;
+  margin: 30px 0;
+
+  @media (max-width: $phone-width) {
+    font-size: 16px;
+  }
+}

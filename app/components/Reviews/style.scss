@@ -1,0 +1,78 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.kreview {
+  margin: 10px 0 20px;
+  color: $color-gray;
+  padding: 20px;
+  border: 1px solid $color-grey-2;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: $phone-width) {
+    @include flexCol;
+    margin: 20px 0;
+  }
+
+  &--featured {
+    border: none;
+    padding: 35px 35px 35px 25px;
+    background: $color-grey-light;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+
+    .kreview__content-title {
+      font-size: 22px;
+    }
+  }
+
+  &__rating {
+    margin-right: 20px;
+    padding-bottom: 12px;
+    .star-rating {
+      font-size: 16px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+
+    &-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    &-reviewer {
+      display: flex;
+      flex-direction: row;
+      font-size: 14px;
+      margin-bottom: 15px;
+
+      &__name {
+        font-weight: 700;
+        margin-right: 10px;
+      }
+
+      &__date {
+        color: #aaa;
+      }
+    }
+
+    &-description {
+      font-size: 14px;
+    }
+
+    @media (max-width: $phone-width) {
+      &-reviewer {
+        &,
+        &__name,
+        &__date, {
+          font-size: 16px;
+        }
+      }
+      &-description {
+        font-size: 16px;
+      }
+    }
+  }
+}

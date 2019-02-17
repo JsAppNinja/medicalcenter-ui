@@ -1,0 +1,12 @@
+@import '~styles/variables';
+
+.media-container {
+  &__form {
+    max-width: 890px;
+    margin: 40px 0;
+
+    &-addbtn {
+      width: 175px;
+    }
+  }
+}

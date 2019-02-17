@@ -1,0 +1,12 @@
+.react-rater {
+  margin-bottom: 10px;
+
+  .react-rater-star {
+    &.focus,
+    &.is-active,
+    &.will-be-active,
+    &:hover {
+      color: #ff6f31;
+    }
+  }
+}

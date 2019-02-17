@@ -1,0 +1,382 @@
+{
+  "name": "react-boilerplate",
+  "version": "3.5.0",
+  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+  },
+  "engines": {
+    "npm": ">=3",
+    "node": ">=5"
+  },
+  "author": "Max Stoiber",
+  "license": "MIT",
+  "scripts": {
+    "analyze:clean": "rimraf stats.json",
+    "preanalyze": "npm run analyze:clean",
+    "analyze": "node ./internals/scripts/analyze.js",
+    "extract-intl": "babel-node --presets env,stage-0 -- ./internals/scripts/extract-intl.js",
+    "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
+    "preinstall": "npm run npmcheckversion",
+    "postinstall": "npm run build:dll",
+    "prebuild": "npm run build:clean",
+    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build:clean": "rimraf ./build",
+    "build:dll": "node ./internals/scripts/dependencies.js",
+    "start": "cross-env NODE_ENV=development nodemon server",
+    "start:frontend-watch": "cross-env NODE_ENV=development node server",
+    "start:production": "npm run test && npm run build && npm run start:prod",
+    "start:prod": "cross-env NODE_ENV=production node server",
+    "presetup": "npm i chalk shelljs",
+    "setup": "node ./internals/scripts/setup.js",
+    "postsetup": "npm run build:dll",
+    "clean": "shjs ./internals/scripts/clean.js",
+    "clean:all": "npm run analyze:clean && npm run test:clean && npm run build:clean",
+    "generate": "plop --plopfile internals/generators/index.js",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged",
+    "pretest": "npm run test:clean && npm run lint",
+    "test:clean": "rimraf ./coverage",
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "lint-staged": {
+    "*.js": "lint:eslint"
+  },
+  "pre-commit": "lint:staged",
+  "babel": {
+    "plugins": [
+      "styled-components"
+    ],
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ],
+      "@babel/preset-react",
+      "@babel/preset-stage-0"
+    ],
+    "env": {
+      "production": {
+        "only": [
+          "app"
+        ],
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "@babel/plugin-transform-react-constant-elements",
+          "@babel/plugin-transform-react-inline-elements"
+        ]
+      },
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs",
+          "dynamic-import-node"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "plugins": [
+      "redux-saga",
+      "react",
+      "jsx-a11y"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "class-methods-use-this": 0,
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
+      "import/imports-first": 0,
+      "import/newline-after-import": 0,
+      "import/no-dynamic-require": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-named-as-default": 0,
+      "import/no-unresolved": 2,
+      "import/no-webpack-loader-syntax": 0,
+      "import/prefer-default-export": 0,
+      "indent": [
+        2,
+        2,
+        {
+          "SwitchCase": 1
+        }
+      ],
+      "jsx-a11y/aria-props": 2,
+      "jsx-a11y/heading-has-content": 0,
+      "jsx-a11y/href-no-hash": "off",
+      "jsx-a11y/label-has-for": 0,
+      "jsx-a11y/mouse-events-have-key-events": 2,
+      "jsx-a11y/role-has-required-aria-props": 2,
+      "jsx-a11y/role-supports-aria-props": 2,
+      "jsx-a11y/no-static-element-interactions": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "jsx-a11y/anchor-has-content": 0,
+      "jsx-a11y/anchor-is-valid": [
+        "warn",
+        {
+          "aspects": [
+            "invalidHref"
+          ]
+        }
+      ],
+      "max-len": 0,
+      "newline-per-chained-call": 0,
+      "no-confusing-arrow": 0,
+      "no-underscore-dangle": 0,
+      "no-console": 1,
+      "no-use-before-define": 0,
+      "prefer-template": 2,
+      "react/no-array-index-key": 0,
+      "react/forbid-prop-types": 0,
+      "react/prefer-stateless-function": 0,
+      "react/prop-types": 0,
+      "react/jsx-first-prop-new-line": [
+        2,
+        "multiline"
+      ],
+      "react/jsx-filename-extension": 0,
+      "react/jsx-no-target-blank": 0,
+      "react/require-default-props": 0,
+      "react/require-extension": 0,
+      "react/self-closing-comp": 0,
+      "redux-saga/no-yield-in-race": 2,
+      "redux-saga/yield-effects": 0,
+      "require-yield": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "./internals/webpack/webpack.prod.babel.js"
+        }
+      }
+    },
+    "globals": {
+      "notify": true
+    }
+  },
+  "dllPlugin": {
+    "path": "node_modules/react-boilerplate-dlls",
+    "exclude": [
+      "chalk",
+      "compression",
+      "cross-env",
+      "express",
+      "ip",
+      "minimist",
+      "sanitize.css",
+      "mailgun-js",
+      "mongoose",
+      "bcrypt",
+      "body-parser",
+      "express-jwt",
+      "dotenv",
+      "firebase",
+      "neo4j-driver",
+      "mailgun-js",
+      "nodemon",
+      "postcss-loader",
+      "autoprefixer",
+      "font-awesome-sass",
+      "compass-mixins",
+      "aws-sdk",
+      "multer"
+    ],
+    "include": [
+      "core-js",
+      "lodash",
+      "eventsource-polyfill"
+    ]
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ],
+    "moduleNameMapper": {
+      ".*\\.(css|less|styl|scss|sass)$": "<rootDir>/internals/mocks/cssModule.js",
+      ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/image.js"
+    },
+    "testRegex": "tests/.*\\.test\\.js$"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.44",
+    "autoprefixer": "^8.6.4",
+    "aws-sdk": "^2.284.1",
+    "bcrypt": "2.0.1",
+    "body-parser": "^1.18.2",
+    "bootstrap-sass": "^3.3.7",
+    "chalk": "1.1.3",
+    "compass-mixins": "^0.12.10",
+    "compression": "1.6.2",
+    "cross-env": "5.0.0",
+    "currency-symbol-map": "^4.0.4",
+    "dotenv": "^4.0.0",
+    "express": "4.15.3",
+    "express-jwt": "^5.3.0",
+    "firebase": "^5.2.0",
+    "font-awesome-sass": "^4.7.0",
+    "fontfaceobserver": "2.0.9",
+    "history": "4.6.3",
+    "hoist-non-react-statics": "2.1.1",
+    "immutable": "3.8.1",
+    "intl": "1.2.5",
+    "invariant": "2.2.2",
+    "ip": "1.1.5",
+    "jsonwebtoken": "^8.1.0",
+    "loaders.css": "^0.1.2",
+    "lodash": "4.17.4",
+    "mailgun-js": "^0.19.0",
+    "mime-types": "^2.1.19",
+    "minimist": "1.2.0",
+    "moment": "^2.21.0",
+    "mongoose": "^4.12.3",
+    "multer": "^1.3.1",
+    "neo4j-driver": "^1.6.1",
+    "nodemon": "^1.12.1",
+    "postcss-loader": "^2.1.5",
+    "prop-types": "15.5.10",
+    "rand-token": "^0.4.0",
+    "raw-loader": "0.5.1",
+    "react": "16.3.1",
+    "react-avatar-editor": "^11.0.4",
+    "react-beautiful-dnd": "^8.0.5",
+    "react-bootstrap": "^0.32.1",
+    "react-collapse": "^4.0.3",
+    "react-confirm": "^0.1.17",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-country-region-selector": "^1.3.0",
+    "react-datepicker": "^1.5.0",
+    "react-day-picker": "^7.1.9",
+    "react-dom": "16.3.1",
+    "react-dropdown": "^1.6.2",
+    "react-dropzone": "^4.2.13",
+    "react-google-maps": "^9.4.5",
+    "react-helmet": "5.1.3",
+    "react-image-gallery": "^0.8.9",
+    "react-infinite-scroll-component": "^4.1.0",
+    "react-intl": "2.4.0",
+    "react-loadable": "4.0.3",
+    "react-loaders": "^3.0.1",
+    "react-motion": "^0.5.2",
+    "react-rangeslider": "^2.2.0",
+    "react-rater": "^0.4.8",
+    "react-redux": "5.0.7",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "4.2.2",
+    "react-scroll-up": "^1.3.3",
+    "react-select": "^1.2.1",
+    "react-sortable-hoc": "^0.8.3",
+    "react-video-thumbnail": "^0.1.3",
+    "react-virtualized-select": "^3.1.3",
+    "reaptcha": "^1.3.0",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-immutable": "4.0.0",
+    "redux-persist": "^4.10.1",
+    "redux-persist-immutable": "^4.3.1",
+    "redux-saga": "0.16.0",
+    "reselect": "3.0.1",
+    "sanitize.css": "4.1.0",
+    "styled-components": "3.3.0",
+    "superagent": "^3.8.3",
+    "supertest": "^3.0.0",
+    "underscore": "^1.9.0",
+    "uniqid": "^5.0.3",
+    "validator": "^10.4.0",
+    "video.js": "^7.0.3",
+    "warning": "3.0.0",
+    "wepay": "^0.0.9",
+    "whatwg-fetch": "2.0.3",
+    "zipcodes": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.44",
+    "@babel/core": "7.0.0-beta.44",
+    "@babel/node": "7.0.0-beta.44",
+    "@babel/plugin-transform-modules-commonjs": "7.0.0-beta.44",
+    "@babel/plugin-transform-react-constant-elements": "7.0.0-beta.44",
+    "@babel/plugin-transform-react-inline-elements": "7.0.0-beta.44",
+    "@babel/preset-env": "7.0.0-beta.44",
+    "@babel/preset-flow": "7.0.0-beta.44",
+    "@babel/preset-react": "7.0.0-beta.44",
+    "@babel/preset-stage-0": "7.0.0-beta.44",
+    "add-asset-html-webpack-plugin": "2.1.3",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-plugin-dynamic-import-node": "1.2.0",
+    "babel-plugin-react-intl": "2.4.0",
+    "babel-plugin-react-transform": "2.0.2",
+    "babel-plugin-styled-components": "1.5.1",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.5",
+    "circular-dependency-plugin": "3.0.0",
+    "coveralls": "2.13.1",
+    "css-loader": "^0.28.11",
+    "enzyme": "2.9.1",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-webpack": "0.10.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-redux-saga": "0.8.0",
+    "eventsource-polyfill": "0.9.6",
+    "exports-loader": "0.6.4",
+    "file-loader": "^1.1.11",
+    "html-loader": "0.4.5",
+    "html-webpack-plugin": "3.2.0",
+    "image-webpack-loader": "4.2.0",
+    "imports-loader": "0.8.0",
+    "jest-cli": "20.0.4",
+    "lint-staged": "3.5.1",
+    "node-plop": "0.7.0",
+    "node-sass": "4.9.0",
+    "null-loader": "0.1.1",
+    "offline-plugin": "4.8.1",
+    "plop": "1.8.0",
+    "pre-commit": "1.2.2",
+    "react-test-renderer": "16.3.1",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.0.1",
+    "shelljs": "0.7.7",
+    "style-loader": "0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "3.5.5",
+    "webpack-dev-middleware": "1.11.0",
+    "webpack-hot-middleware": "2.18.0"
+  },
+  "bugs": {
+    "url": "https://github.com/react-boilerplate/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/react-boilerplate/react-boilerplate#readme",
+  "main": "index.js"
+}

@@ -1,0 +1,69 @@
+@import '~styles/variables';
+
+.ktag-input {
+  &__label {
+    display: block;
+    padding: 10px 20px 10px 0;
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0 15px 20px 0;
+    border-radius: 5px;
+    background: $color-white;
+    cursor: pointer;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+
+    &-content {
+      border: none;
+      padding: 6px 15px;
+      width: 100px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+
+      .ktag-input__remove-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__remove-icon {
+    opacity: 0;
+    position: absolute;
+    font-size: 24px !important;
+    top: -12px;
+    right: -12px;
+    color: $color-default;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    width: 30%;
+
+    .Select-control {
+      border-radius: 0;
+      border-color: $color-black-1;
+    }
+
+    .Select-arrow-zone {
+      display: none;
+    }
+
+    .Select-clear {
+      display: none;
+    }
+  }
+}

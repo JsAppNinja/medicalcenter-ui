@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------
+Project:	Mentor - Mentor & Coach HTML Template
+Version:	1.0
+Last change:	24.10.2016
+Assigned to:	ThemeStarz
+
+[Table of contents]
+
+1. Header
+2. Hero Slider
+3. Elements Styling
+4. Universal classes
+5. Classes
+6. Forms
+7. Responsive
+
+[Color codes]
+
+default_color[#4611a7];
+Color grey dark: #1f1f1f;
+Color grey light: #fafafa;
+
+[Typography]
+
+Body copy:		'Lato', sans-serif; 14px;
+Headers:		'Lato', sans-serif;
+
+-------------------------------------------------------------------*/
+
+@import 'node_modules/compass-mixins/lib/compass/css3';
+
+@import './helpers/mixin';
+@import '../variables';
+/* 1. Header */
+@import './helpers/header';
+/* 3. Elements Styling */
+@import './helpers/elements';
+/* 4. Universal classes */
+@import './helpers/universal-classes';
+/* 5. Classes */
+@import './helpers/classes';
+/* 6. Forms */
+@import './helpers/forms';
+/* 7. Responsive */
+@import './helpers/responsive';
+
+// custom moodal
+@import './helpers/modal';
+
+@import 'legacy-home';

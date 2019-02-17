@@ -1,0 +1,31 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.info-modal {
+  &.modal-dialog {
+    width: 550px;
+  }
+
+  &__content {
+    @include flexCol;
+    align-items: center;
+    padding: 20px 0 30px;
+  }
+
+  &__icon {
+    color: $color-green;
+    font-size: 50px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  &__desc {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+}

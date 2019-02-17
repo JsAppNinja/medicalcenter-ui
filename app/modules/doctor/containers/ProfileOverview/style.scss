@@ -1,0 +1,8 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.profile-overview {
+  padding: 60px 0 50px;
+  background-color: $color-grey-light;
+  color: $color-gray;
+}

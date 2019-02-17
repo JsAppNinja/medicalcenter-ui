@@ -1,0 +1,14 @@
+@import '~styles/variables';
+
+.btn-primary {
+  &.contact-float-button {
+    @media (max-width: $phone-width) {
+      width: 120px;
+      height: 36px;
+      font-size: 12px;
+      font-weight: 100;
+      padding: 0;
+      line-height: 0;
+    }
+  }
+}

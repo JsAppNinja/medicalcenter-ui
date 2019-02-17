@@ -1,0 +1,11 @@
+@import "~styles/variables";
+
+.content-sub {
+  .content-holder {
+    &.list-view {
+      &.carepackage-list-view-items {
+        margin: 0 2px;
+      }
+    }
+  }
+}

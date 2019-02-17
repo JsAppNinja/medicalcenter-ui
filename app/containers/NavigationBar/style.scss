@@ -1,0 +1,246 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.navbar-logo {
+  width: 200px;
+  margin-right: 30px;
+  @media (max-width: $phone-width) {
+    margin-right: 0;
+    width: 80px;
+  }
+}
+
+.nav {
+  padding: 0 !important;
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 70px;
+    background-color: $color-white;
+
+    &-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &-saved {
+      cursor: pointer;
+      color: $color-grey;
+      font-weight: 700;
+      margin-right: 30px;
+    }
+
+    &-link {
+      cursor: pointer;
+      text-decoration: underline;
+      color: $color-default;
+      font-weight: 700;
+    }
+
+    &-button {
+      font-size: 14px !important;
+      min-width: 125px;
+      margin-right: 30px;
+    }
+
+    &-bell {
+      width: 24px;
+      height: 27px;
+      margin-right: 30px;
+      background: url('~images/bell-alert.png') center center no-repeat;
+    }
+
+    &-partner {
+      margin-left: 30px;
+      letter-spacing: 0.3px;
+      &.btn {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__bottom {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: 0 auto;
+
+    @media (max-width: $phone-width) {
+      flex-direction: column;
+      height: auto;
+
+      &-link {
+        margin: 10px 0;
+      }
+    }
+
+    &-link {
+      font-weight: 700;
+      text-transform: uppercase;
+      opacity: 1;
+      font-size: 14px;
+      color: $color-grey;
+      transition: opacity .3s ease-in-out;
+
+      &:hover {
+        color: $color-grey;
+        opacity: .7;
+      }
+    }
+  }
+
+  &-mobile {
+    display: none;
+  }
+
+  @media (max-width: $phone-width) {
+    &-desktop {
+      display: none;
+    }
+
+    &-mobile {
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 70px;
+    }
+
+    &__top {
+      height: auto;
+      padding: 10px 20px;
+      margin-right: 0;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+
+      &.nav-opened {
+        transition: all 0.5s;
+        transform: scale(1);
+      }
+
+      &.nav-closed {
+        transition: all 0.1s;
+        transform: scale(0);
+      }
+
+      &-search {
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16.5px 20px;
+        width: 100%;
+        background-color: $color-white;
+
+        &.search-opened {
+          transition: all .5s;
+          transform: scale(1);
+        }
+
+        &.search-closed {
+          transform: scale(0);
+        }
+
+        &__closeicon {
+          &.fa {
+            font-size: 30px;
+          }
+        }
+      }
+
+      &-searchbar {
+        width: 90%;
+      }
+
+      &-left {
+        margin-right: 10px;
+      }
+
+      &-link {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      &-icon {
+        margin: 0 20px;
+        font-size: 23px;
+      }
+
+      &-menuicon {
+        .bar1, .bar2, .bar3 {
+          width: 35px;
+          height: 5px;
+          background-color: #333;
+          margin: 6px 0;
+          transition: 0.4s;
+        }
+      }
+
+      &-menuopend {
+        .bar1 {
+          transform: rotate(-45deg) translate(-9px, 6px);
+        }
+        .bar2 {
+          opacity: 0;
+        }
+        .bar3 {
+          transform: rotate(45deg) translate(-8px, -8px);
+        }
+      }
+
+      &-partner {
+        &.btn {
+          margin: 20px auto;
+          width: 100%;
+          height: 40px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .opened {
+      background-color: $color-grey-light;
+      box-shadow: 0 5px 10px 0 rgba($color-black, 0.2);
+      margin-top: 1px;
+    }
+
+    .closed {
+      display: none;
+    }
+
+    &__bottom {
+      align-items: flex-end;
+      padding: 0 20px;
+
+      flex-direction: column;
+
+      &-link {
+        margin: 10px 0;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.profile-menu.dropdown-menu {
+  @include lightShadow;
+  background-color: $color-grey-light;
+  border: solid 1px $color-grey-2;
+  border-radius: 0;
+  padding: 15px 20px 5px 15px;
+}

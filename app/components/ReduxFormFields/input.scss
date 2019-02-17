@@ -1,0 +1,37 @@
+@import '~styles/variables';
+
+label {
+  &.form-no-label {
+    display: inline;
+  }
+}
+
+.form-group {
+  width: 100%;
+}
+
+.has-nextlabel {
+  display: flex;
+  align-items: center;
+
+  &__input {
+    width: 80%;
+  }
+
+  &__label {
+    width: 20%;
+    padding: 10px;
+  }
+
+  &__feedback {
+    margin-right: 55px;
+  }
+}
+
+.form-control-feedback {
+  &.glyphicon {
+    &.has-no-label__feedback {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '~styles/variables';
+
+.hero-section {
+  &.has-sidebar {
+    .results-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 810px;
+
+      .results {
+        &.custom-results {
+          margin-right: 20px;
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
